@@ -56,13 +56,15 @@ class Article(Base):
     def __repr__(self):
         return f"Article({self.title})"
 
+
+#przykład wiele do wielu
 class Hashtag(Base):
     __tablename__ = "hashtags"
 
     id = Column(Integer, primary_key=True)
     name = Column(String(50), nullable=False, unique=True)
 
-    articles = relationship("Article", secondary="articles_hashtags")
+    articles = relationship("Article", secondary="articles_hashtags") # relacje
 
     def __repr__(self):
         return f"Hashtag({self.name})"
