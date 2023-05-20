@@ -6,7 +6,7 @@ from models import Author, Article
 
 
 def main():
-    author = session.query(Author).get(6)
+    author = session.query(Author).get(10)
 
     fake = Faker()
     article = Article(
