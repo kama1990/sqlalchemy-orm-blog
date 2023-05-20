@@ -25,7 +25,7 @@ class Author(Base):
         default=datetime.datetime.now
     )
 
-    articles = relationship("Article")
+    articles = relationship("Article")  # nazwa tabeli bądź klasy
 
     def __repr__(self):
         return f"Author({self.user_name})"
@@ -50,7 +50,7 @@ class Article(Base):
         nullable=False,
     )
 
-    author = relationship("Author")
+    author = relationship("Author")  # nazwa tabeli bądź klasy
 
     def __repr__(self):
         return f"Article({self.title})"

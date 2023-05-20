@@ -6,16 +6,16 @@ from models import Author, Article
 
 
 def main():
-    author = session.query(Author).get(1)
+    author = session.query(Author).get(6)
 
     fake = Faker()
     article = Article(
-        title=fake.sentence(),
+        title=fake.sentence(),  # dodaje nam fake title - dla podanego autora w get
         content="New article content"
     )
 
     author.articles.append(article)
-    session.commit()
+    session.commit()  # bez session commit nie zadziała
 
 
 if __name__ == "__main__":
